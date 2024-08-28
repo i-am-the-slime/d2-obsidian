@@ -216,8 +216,17 @@ export class D2Processor {
       `--pad=${this.plugin.settings.pad}`,
       `--sketch=${this.plugin.settings.sketch}`,
       "--bundle=false",
-      "--scale=1",
+      "--scale=1"
     ];
+    if(this.plugin.settings.regularFontPath) {
+      args.push(`--fontRegular=${this.plugin.settings.regularFontPath}`);
+    }
+    if(this.plugin.settings.boldFontPath) {
+      args.push(`--fontBold=${this.plugin.settings.boldFontPath}`);
+    }
+    if(this.plugin.settings.italicFontPath) {
+      args.push(`--fontItalic=${this.plugin.settings.italicFontPath}`);
+    } 
     const cmd = args.join(" ");
     const child = exec(cmd, options);
     child.stdin?.write(source);
