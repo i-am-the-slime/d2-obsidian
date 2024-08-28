@@ -12,6 +12,9 @@ export interface D2PluginSettings {
   pad: number;
   sketch: boolean;
   containerHeight: number;
+  regularFontPath: string?;
+  boldFontPath: string?;
+  italicFontPath: string?;
 }
 
 export const DEFAULT_SETTINGS: D2PluginSettings = {
@@ -22,7 +25,7 @@ export const DEFAULT_SETTINGS: D2PluginSettings = {
   d2Path: "",
   pad: 100,
   sketch: false,
-  containerHeight: 800,
+  containerHeight: 800
 };
 
 export class D2SettingsTab extends PluginSettingTab {
